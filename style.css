@@ -4,22 +4,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    /* Changed to a clean, modern font stack */
+    font-family: 'Inter', 'Helvetica Neue', sans-serif; 
     text-decoration: none;
 }
+
+/* New Font Import - You need to link this in the HTML header or use @import in CSS */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap'); */
 
 /* ################# SCROLL CODE HERE ################# */
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #fff;
+    background-color: #f4f4f4; /* Lighter scrollbar track */
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #d83b3b;
+    background-color: #007bff; /* Blue accent for scrollbar */
     border-radius: 10px;
 }
 
@@ -27,7 +31,8 @@
 /* ########### LOADER ########## */
 
 #loading {
-    background: url("./images/loadng.gif") center no-repeat var(--pure-color);
+    /* Assuming you still want the loader animation */
+    background: url("./images/loadng.gif") center no-repeat var(--pure-color); 
     z-index: 9999999999 !important;
     width: 100%;
     height: 100vh;
@@ -37,7 +42,8 @@
 /* ############ HEADINGS AND ELMENTS DEFINING ############# */
 
 span {
-    color: var(--main-color);
+    color: var(--accent-color); /* Updated to accent color */
+    font-weight: 700;
 }
 
 .heading {
@@ -46,48 +52,56 @@ span {
     align-items: flex-start;
     justify-content: flex-start;
     height: 50px;
-    padding-left: 30px;
-    margin-top: 20px;
+    padding-left: 50px; /* Increased padding */
+    margin-top: 50px; /* Increased margin */
 }
 
+.heading h2 {
+    font-size: 32px;
+    color: var(--dark-color);
+}
 
 .comp-date {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 12px;
+    font-size: 13px;
+    padding-top: 10px;
+    border-top: 1px solid var(--grey-color);
 }
 
 .comp {
-    color: var(--main-color);
+    color: var(--accent-color); /* Updated to accent color */
+    font-weight: 500;
 }
 
 .news-date {
-    color: var(--blue-color);
+    color: var(--text-muted); /* Softer secondary color */
 }
 
 /* ############ DEFINING COLORS ############ */
 
 :root {
-    --main-color: #d83b3b;
+    --primary-color: #0d0057; /* Deep Navy/Blue for strength */
+    --accent-color: #007bff; /* Bright Blue for links/buttons/highlights */
     --pure-color: #fff;
-    --dark-color: #000;
-    --grey-color: #dadada;
-    --blue-color: #0d0057;
+    --dark-color: #1a1a1a;
+    --grey-color: #e9ecef; /* Light gray for backgrounds/dividers */
+    --text-muted: #6c757d; /* Muted text color */
 }
 
 /* ############# NAVBAR STARTS HERE ############# */
 
 nav {
     width: 100%;
-    height: 70px;
+    height: 80px; /* Slightly taller nav */
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: var(--main-color);
+    background-color: var(--primary-color); /* Deep Navy Background */
     position: fixed;
     z-index: 1000;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.474);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* ########### LOGO STYLE HERE ########## */
@@ -95,13 +109,14 @@ nav {
 
 nav .logo {
     color: var(--pure-color);
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: 500;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .logo i {
     margin-right: 10px;
+    color: var(--accent-color);
 }
 
 /* ########## NAVIGATION MENU HERE ############ */
@@ -110,7 +125,7 @@ nav .logo {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 70%;
+    width: 75%;
 }
 
 /* ############ NAVIGATION BUTTON HERE ############ */
@@ -119,33 +134,35 @@ nav .logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 150px;
-    margin-left: 70px;
+    width: 180px;
+    margin-left: 40px;
 }
 
 .button a {
-    padding: 10px 30px;
-    font-size: 16px;
+    padding: 8px 20px;
+    font-size: 15px;
     border: 1px solid var(--pure-color);
     color: var(--pure-color);
     background-color: transparent;
-    transition: 0.6s;
+    transition: 0.3s;
     cursor: pointer;
     text-decoration: none;
-    margin-right: 15px;
+    margin-right: 10px;
+    border-radius: 4px;
+    font-weight: 500;
 }
 
 .button a:hover {
-    border: 1px solid var(--pure-color);
-    color: var(--main-color);
-    background-color: var(--pure-color);
+    border-color: var(--accent-color);
+    color: var(--primary-color);
+    background-color: var(--accent-color);
 }
 
 /* ########## NAVIGATION LINKS HERE ########## */
 
 .nav_link {
     list-style: none;
-    width: 400px;
+    width: 450px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -155,6 +172,14 @@ nav .logo {
     text-transform: uppercase;
     font-weight: 500;
     color: var(--pure-color);
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s;
+}
+
+.nav_link li a:hover {
+    border-bottom: 2px solid var(--accent-color);
+    color: var(--accent-color);
 }
 
 /* ########### IMAGE NAVIGATION SECTION ######### */
@@ -166,19 +191,19 @@ nav .logo {
 }
 
 .profileImage img {
-    width: 60px;
+    width: 50px;
     border-radius: 50%;
-    margin-top: 5px;
+    border: 2px solid var(--accent-color);
 }
 
 /* ############ NAVIGATION ICONS ########### */
 
-.BarIcons i.fa-bars {
-    display: none;
-}
-
+.BarIcons i.fa-bars,
 .BarIcons i.fa-xmark {
     display: none;
+    color: var(--pure-color);
+    font-size: 28px;
+    cursor: pointer;
 }
 
 /* ########### SEARCH SECTION STARTS ########### */
@@ -187,12 +212,14 @@ nav .logo {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 450px;
+    width: 350px; /* Adjusted width */
 }
 
 .search-box {
     border: 1px solid var(--pure-color);
-    padding: 10px 30px;
+    padding: 8px 15px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .search-image .search-box input {
@@ -200,18 +227,18 @@ nav .logo {
     border: none;
     color: var(--pure-color);
     outline: none;
-    width: 70px;
-    position: relative;
-    font-size: 16px;
+    width: 100px; /* Adjusted width */
+    font-size: 15px;
 }
 
 .search-image .search-box input::placeholder {
-    color: var(--pure-color);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .search-image .search-box i {
     color: var(--pure-color);
     font-size: 16px;
+    cursor: pointer;
 }
 
 
@@ -225,43 +252,63 @@ main {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.717), rgba(0, 0, 0, 0.682)), url("./images/bg.jpg");
+    /* Use a darker overlay for better text contrast */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url("./images/bg.jpg"); 
     width: 100%;
-    height: 100vh;
+    height: 90vh; /* Reduced height for better flow */
     background-size: cover;
-    clip-path: polygon(0 0, 100% 0, 100% 55%, 50% 95%, 0 55%);
+    background-position: center;
+    /* Removed clip-path for a cleaner, full-width hero */
     color: var(--pure-color);
+    padding-top: 80px; /* To account for fixed nav */
 }
 
 /* ############# MAIN CONTENT STARTS ########### */
 
 main .main-content {
-    width: 600px;
-    height: 360px;
+    width: 700px;
+    height: auto;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     flex-direction: column;
+    padding: 40px;
 }
 
 /* ############# MAIN CONTENT STARTS ########### */
 
 main .main-content .main-heading h1 {
-    text-transform: capitalize;
-    font-size: 40px;
+    text-transform: uppercase;
+    font-size: 56px; /* Larger, bolder hero text */
+    font-weight: 900;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+main .main-content .main-heading p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
 }
 
 /* ############# MAIN BUTTON STARTS ########### */
 
 main .main-content button {
-    padding: 10px 30px;
-    background-color: var(--main-color);
-    text-transform: capitalize;
+    padding: 12px 40px;
+    background-color: var(--accent-color);
+    text-transform: uppercase;
     border: none;
     color: var(--pure-color);
-    border-radius: 20px;
-    margin-top: 10px;
+    border-radius: 4px;
+    font-weight: 700;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    letter-spacing: 1px;
+}
+
+main .main-content button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
 /* ############## MAIN SECTION STARTS ENDS ############# */
@@ -270,10 +317,13 @@ main .main-content button {
 
 .news-section {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: space-around;
     width: 100%;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
+    padding: 0 50px 80px 50px;
+    background-color: var(--grey-color); /* Light grey background for separation */
 }
 
 /* ############## MAIN NEWS IMAGES STARTS ############## */
@@ -282,75 +332,105 @@ main .main-content button {
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.071), rgba(0, 0, 0, 0.166)), url("./images/news.webp");
-    width: 45%;
-    height: 90%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("./images/news.webp");
+    width: 40%; /* Slightly narrower main news */
+    height: 600px; /* Fixed height for consistency */
     background-size: cover;
     background-position: center;
     flex-direction: column;
     cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.main-news-image:hover {
+    transform: translateY(-5px);
 }
 
 .main-news-head {
-    background-color: var(--blue-color);
-    padding: 10px 20px;
+    background-color: var(--accent-color);
+    padding: 8px 15px;
     text-transform: uppercase;
     color: var(--pure-color);
-    font-style: italic;
-    transform: translateY(10px) translateX(-440px);
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 700;
+    transform: translateY(15px) translateX(-350px); /* Adjusted position */
+    z-index: 10;
 }
 
-.main-news-image h1 {
-    background-color: var(--main-color);
-    text-transform: uppercase;
+.main-news-image h3 {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background for readability */
+    text-transform: capitalize;
     color: var(--pure-color);
-    padding: 10px 30px;
-    font-weight: 800;
-    font-size: 30px;
+    padding: 15px 30px;
+    font-weight: 700;
+    font-size: 24px;
+    width: 100%;
 }
 
 /* ############# NEWS CARDS HERE ########### */
 
 .new-news-here {
-    width: 52%;
+    width: 55%; /* Wider card area */
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 
 .news-cards {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
-    padding: 10px 30px;
+    padding: 0;
 }
 
 .news-cards .news-card {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    overflow: hidden;
+    align-items: flex-start;
+    justify-content: flex-start;
     flex-direction: column;
-    width: 305px;
-    height: 310px;
+    width: 48%; /* Two columns layout */
+    height: auto;
     background-color: var(--pure-color);
-    margin-right: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.152);
+    margin-right: 0; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.news-cards .news-card:nth-child(odd) {
+    margin-right: 4%; /* Space between columns */
+}
+
+.news-cards .news-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* ############ NEWS CONTENT ########### */
 
+.news-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
 .news-card .news-content {
-    padding: 10px 20px;
+    padding: 20px;
+    width: 100%;
 }
 
 .news-content h3 {
-    color: var(--blue-color);
-    margin-bottom: 10px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
 /* ############# NEWS SECTION STARTS END ############## */
@@ -358,12 +438,9 @@ main .main-content button {
 /* ############## VIDEOS SECTION STARTS ############### */
 
 .videos-section {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
+    padding: 40px 50px 80px 50px;
+    background-color: var(--pure-color);
+    height: auto;
 }
 
 .videos-cards {
@@ -371,19 +448,29 @@ main .main-content button {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .video-card {
-    width: 320px;
+    width: 300px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.257);
-    margin-right: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-right: 0;
+    border-radius: 6px;
+    transition: transform 0.3s;
+    background-color: var(--pure-color);
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
 }
 
 /* ############ VIDEOS IMAGES ############### */
 
 .video-card img {
     width: 100%;
+    height: 180px;
+    object-fit: cover;
     position: relative;
 }
 
@@ -391,53 +478,46 @@ main .main-content button {
 
 .video-card .duration {
     position: relative;
-    left: 10px;
-    width: 80px;
-    transform: translateY(-20px) translateX(100px);
-    background-color: var(--main-color);
-    display: flex;
+    left: auto;
+    right: 15px;
+    width: auto;
+    padding: 3px 10px;
+    transform: translateY(-25px);
+    background-color: var(--accent-color);
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     color: var(--pure-color);
+    font-size: 14px;
+    border-radius: 0 0 0 4px;
 }
 
-.video-card .duration:before {
-    content: "";
-    background-color: var(--main-color);
-    transform: skew(-10deg);
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 1rem;
+.video-card .duration i {
+    margin-right: 5px;
 }
 
+/* Remove skewed elements as they are complicated/dated */
+.video-card .duration:before,
 .video-card .duration:after {
-    background-color: var(--main-color);
-    transform: skew(-10deg);
-    position: absolute;
-    content: "";
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 1rem;
+    display: none;
 }
 
 /* ########## VIDEOS CONTENT HERE ############ */
 
 .video-card .video-content {
-    padding: 10px 30px;
-    margin-top: -20px;
+    padding: 15px 20px;
+    margin-top: -10px;
 }
 
-.video-card .video-content h1 {
-    font-size: 20px;
-    text-align: center;
-    color: var(--blue-color);
+.video-card .video-content h3 {
+    font-size: 18px;
+    text-align: left;
+    color: var(--primary-color);
+    font-weight: 700;
 }
 
 .videos-date-comp {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 /* ############## VIDEOS SECTION ENDS ############### */
@@ -446,59 +526,89 @@ main .main-content button {
 
 .match-highlights {
     width: 100%;
-    height: 90vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: var(--main-color);
-    margin-top: 20px;
-}
-
-.match-highlights .video-highlights {
-    width: 60%;
+    height: auto; /* Changed to auto to accommodate content */
+    min-height: 80vh;
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
+    background-color: var(--primary-color); /* Deep Navy Background */
+    padding: 40px 50px;
+    margin-top: 0;
+}
+
+.match-highlights .video-highlights {
+    width: 65%; /* Wider video area */
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
     flex-direction: column;
-    margin-left: 10px;
+    margin-left: 0;
+    padding-right: 20px;
 }
 
-.video-highlights h1 {
+.video-highlights h2 {
     color: #fff;
-    font-size: 40px;
+    font-size: 32px;
     text-transform: uppercase;
-
+    margin-bottom: 20px;
+    font-weight: 700;
 }
+
+/* New Placeholder styling for the static video div */
+.video-highlights .video-placeholder {
+    width: 100%;
+    /* Height is set inline in HTML but can be defined here */
+    height: 500px; 
+    background: #111;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
 
 .match-highlights .videos {
-    overflow-y: scroll;
+    overflow-y: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
-    width: 37%;
-    height: 100%;
+    width: 30%; /* Narrower sidebar */
+    height: 600px; /* Fixed height for scrollable list */
+    padding-right: 10px; /* Space for scrollbar */
+    gap: 10px;
 }
 
+/* Style for the individual video items in the sidebar */
 .match-highlights .videos .video {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    width: 450px;
-    color: #fff;
-    background-color: #ffffff23;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 100px;
+    color: var(--pure-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    cursor: pointer;
 }
 
-.video h1 {
-    margin-left: 20px;
-    font-size: 19px;
+.match-highlights .videos .video:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.video h3 {
+    margin-left: 15px;
+    font-size: 16px;
     font-weight: 500;
+    line-height: 1.4;
+    color: var(--pure-color);
 }
 
 .match-highlights .videos .video img {
-    width: 200px;
+    width: 100px; /* Smaller thumbnail */
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
 }
 
 /* ################ MATCH HIGHLIGHT ENDS ########### */
@@ -510,12 +620,14 @@ main .main-content button {
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    height: 95vh;
-    margin-top: 100px;
+    height: auto;
+    min-height: 90vh;
+    padding: 60px 50px;
     flex-direction: column;
-    overflow: hidden;
     color: var(--pure-color);
-    background-color: var(--main-color);
+    background-color: var(--primary-color); /* Consistent background */
+    margin-top: 0;
+    overflow: hidden;
 }
 
 .tournament-stats .stats {
@@ -524,47 +636,78 @@ main .main-content button {
     justify-content: center;
     width: 100%;
     flex-wrap: wrap;
+    gap: 30px; /* Spacing between stats boxes */
 }
 
 .stats .stat {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 380px;
-    margin-left: 20px;
-    height: 220px;
+    justify-content: flex-start;
+    width: 350px; /* Fixed width for responsive card layout */
+    height: 250px; /* Increased height */
     overflow: hidden;
-    margin-bottom: 20px;
-    padding-left: 40px;
-    background-color: #96000090;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1); /* Lighter background for the card */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    position: relative;
 }
 
 .stats .stat .flag img {
     width: 30px;
-    margin-right: 10px;
+    height: 20px;
+    object-fit: cover;
+    margin-right: 8px;
+    border: 1px solid var(--pure-color);
 }
 
 .count-stat .count {
-    font-size: 60px;
+    font-size: 72px; /* Larger count */
+    font-weight: 900;
+    line-height: 1;
 }
 
 .stat-content h1 {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
+    line-height: 1;
+    margin: 10px 0;
 }
 
 .stat .stat-content h1 span {
-    color: #fff;
-    font-weight: 300;
+    color: var(--accent-color); /* Accent color for first name */
+    font-weight: 900;
+    display: block;
+    font-size: 1.8rem;
 }
 
+.stat .man {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    overflow: hidden;
+    width: 50%;
+}
 .stat .man img {
-    width: 230px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 .flag {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-top: 5px;
+}
+.flag h2 {
+    font-size: 14px;
+    font-weight: 700;
 }
 
 .stat-content {
@@ -572,64 +715,73 @@ main .main-content button {
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-    width: 280px;
+    width: 60%;
+    z-index: 2; /* Ensure content stays above the man image */
 }
 
 .stat-content .count {
     color: var(--pure-color);
+    margin-top: 15px;
 }
 
 .tournament-heading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 0;
+    margin-bottom: 40px;
 }
 
-.tournament-stats .tournament-heading h1 {
-    font-size: 40px;
+.tournament-stats .tournament-heading h2 {
+    font-size: 48px;
+    font-weight: 900;
 }
 
 .tournament-stats .tournament-heading h3 {
-    font-size: 30px;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--accent-color);
 }
 
 .stat h3 {
     text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
 }
 
+/* Specific styling for the counter stats (highest score, win percentage, matches) */
 .stat-count {
-    display: flex;
-    align-items: center;
     justify-content: center;
-}
-
-.stat-count .count-stat {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .circle-border{
-    border: 30px solid #f2ea14;
+    border: 15px solid var(--accent-color); /* Thinner, blue border */
     border-radius: 50%;
-    width: 190px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    background-color: var(--primary-color);
+}
+.circle-border h1 {
+    font-size: 60px;
+    font-weight: 900;
+    margin-bottom: 5px;
 }
 
-.stat-count{
+.stat-count .count-stat {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
 }
+.stat-count .count-stat .count {
+    margin-top: 5px;
+}
+
 
 /* #######TOURNAMENT STATS ENDS ########## */
 
@@ -640,33 +792,45 @@ main .main-content button {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 40vh;
+    height: auto;
+    padding: 60px 50px;
     flex-direction: column;
+    background-color: var(--pure-color);
 }
 
-.partners .partners-1 {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
+.partners .partners-1,
 .partners .partners-2 {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 0;
+    gap: 30px;
+}
+
+.partners .partners-2 {
     margin-top: 30px;
 }
 
 .partners .partners-1 img {
-    width: 200px;
-    margin-right: 20px;
+    width: 180px;
+    height: 80px;
+    object-fit: contain;
+    margin-right: 0;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
 }
-
 .partners .partners-2 img {
-    width: 160px;
-    margin-right: 20px;
+    width: 150px;
+    height: 70px;
+    object-fit: contain;
+    margin-right: 0;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+.partners img:hover {
+    filter: grayscale(0%);
 }
 
 /* ############### PARTNERS SECTION ENDS ############# */
@@ -674,7 +838,7 @@ main .main-content button {
 /* ############### FOOTER SECTION STARTS HERE ################ */
 
 footer {
-    background-color: var(--main-color);
+    background-color: var(--dark-color); /* Darker footer */
     width: 100%;
     height: auto;
     display: flex;
@@ -682,11 +846,8 @@ footer {
     justify-content: center;
     flex-direction: column;
     color: var(--pure-color);
-    padding-top: 20px;
-}
-
-.col-1 {
-    font-size: 18px;
+    padding-top: 40px;
+    padding-bottom: 0;
 }
 
 .col-1 {
@@ -694,167 +855,270 @@ footer {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 400px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
+    width: 80%;
+    max-width: 450px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.col-1 h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--pure-color);
 }
 
 .col-1 .icons {
-    width: 60%;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
 .col-1 .icons i {
-    font-size: 40px;
+    font-size: 30px;
+    color: var(--text-muted);
+    transition: color 0.3s;
+}
+
+.col-1 .icons i:hover {
+    color: var(--accent-color);
 }
 
 .col-2 {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-around;
     width: 100%;
+    max-width: 1200px;
     height: auto;
-    margin-top: 30px;
+    margin-top: 0;
+    padding: 0 50px 40px 50px;
     flex-wrap: wrap;
 }
 
 .col-2 .list {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     flex-direction: column;
+    margin-bottom: 30px;
 }
 
+.col-2 .list h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.col-2 .list ul {
+    list-style: none;
+    padding: 0;
+}
+.col-2 .list ul li {
+    margin-bottom: 8px;
+}
+.col-2 .list ul li a {
+    color: var(--text-muted);
+    font-size: 15px;
+    transition: color 0.3s;
+}
+.col-2 .list ul li a:hover {
+    color: var(--pure-color);
+}
+
+
 .footer-bottom {
-    margin-top: 20px;
-    height: 45px;
-    background-color: var(--pure-color);
+    margin-top: 0;
+    height: 50px;
+    background-color: #111;
     width: 100%;
-    color: var(--main-color);
+    color: var(--text-muted);
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 14px;
 }
 
 /* ############### FOOTER SECTION ENDS HERE ################ */
 
 /* ############## RESPONSIVE MOBILE AND IPAD SECTION STARTS HERE ############## */
 
-@media (max-width : 878px) {
-    main {
-        padding: 10px 10px;
-    }
-
-    .menu {
-        background-color: #d83b3b;
-        position: fixed;
-        min-height: 105vh;
-        right: 0;
+@media (max-width : 1200px) {
+    .match-highlights {
         flex-direction: column;
-        justify-content: space-around;
-        top: 20px;
+        padding: 40px 30px;
+        min-height: auto;
     }
-
-    .menu .nav_link {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 350px;
+    .match-highlights .video-highlights {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 30px;
     }
-
-    .menu li a {
-        font-size: 25px;
+    .match-highlights .videos {
+        width: 100%;
+        height: 400px;
     }
-
-    .menu.openMenu {
-        max-height: 190vh;
+    .tournament-stats .stats .stat {
+        width: 45%;
     }
-
     .news-section {
         flex-direction: column;
         height: auto;
+        padding: 0 30px 50px 30px;
     }
-
-    .news-cards .news-card {
-        width: 305px;
-    }
-
-    .videos-section {
-        height: auto;
-    }
-
-    .partners-1,
-    .partners-2 {
-        flex-wrap: wrap;
-    }
-
-    .partners {
-        height: auto;
-    }
-
-    .partners img {
+    .main-news-image {
+        width: 100%;
         margin-bottom: 30px;
     }
-
-    .col-1 {
-        width: 100%;
-    }
-
     .new-news-here {
         width: 100%;
     }
+    .news-cards .news-card {
+        width: 48%;
+    }
+    .col-2 {
+        justify-content: space-around;
+        padding: 0 30px 40px 30px;
+    }
+}
 
-    .main-news-image {
-        width: 85%;
-        height: 85vh;
+
+@media (max-width : 768px) {
+    /* Mobile Nav Overhaul */
+    nav {
+        height: 60px;
+    }
+    .logo {
+        font-size: 22px !important;
+    }
+    .menu {
+        background-color: var(--primary-color);
+        position: fixed;
+        min-height: 100vh;
+        right: 0;
+        top: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 80%;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+        padding-top: 80px;
+    }
+    .menu.openMenu {
+        transform: translateX(0);
     }
 
     .BarIcons i.fa-bars {
         display: block;
-        color: #fff;
-        font-size: 30px;
-        cursor: pointer;
+        margin-right: 20px;
+        color: var(--pure-color);
     }
-}
-
-/* ############## RESPONSIVE MOBILE AND IPAD SECTION END HERE ############## */
-
-/* ############## RESPONSIVE TABLET SECTION STARTS HERE ############## */
-
-@media (max-width : 1300px) {
-    .news-section {
-        height: auto;
+    .BarIcons i.fa-xmark {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
     }
-
-    .news-cards .news-card {
-        width: 305px;
-    }
-
-    .main-news-image {
-        height: 100vh;
-    }
-
-    .videos-section {
-        height: auto;
-    }
-
-    .partners-1,
-    .partners-2 {
-        flex-wrap: wrap;
-    }
-
-    .partners {
-        height: auto;
-    }
-
-    .col-1 {
+    
+    .menu .nav_link {
+        flex-direction: column;
         width: 100%;
+        margin: 40px 0;
     }
-
-    .partners img {
+    .menu li a {
+        font-size: 20px;
+        padding: 15px 0;
+    }
+    .search-image {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 20px;
         margin-bottom: 30px;
     }
-}
+    .search-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .button {
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0;
+    }
+    .button a {
+        width: 100%;
+        margin: 5px 0;
+        text-align: center;
+    }
 
-/* ############## RESPONSIVE TABLET SECTION END HERE ############## */
+    /* Main Section */
+    main {
+        padding-top: 60px;
+        height: 80vh;
+    }
+    main .main-content .main-heading h1 {
+        font-size: 40px;
+    }
+
+    /* News and Video Sections */
+    .heading {
+        padding-left: 20px;
+    }
+    .news-section, .videos-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .news-cards .news-card {
+        width: 100%; /* Single column news on mobile */
+        margin-right: 0 !important;
+    }
+    .main-news-image {
+        height: 400px;
+    }
+    .main-news-head {
+        transform: translateY(15px) translateX(-50px);
+    }
+    .main-news-image h3 {
+        font-size: 18px;
+    }
+
+    /* Stats Section */
+    .tournament-stats {
+        padding: 40px 20px;
+        min-height: auto;
+    }
+    .tournament-stats .stats .stat {
+        width: 100%; /* Single column stats on mobile */
+        height: auto;
+        padding: 20px;
+    }
+    .stat .man {
+        display: none; /* Hide player image on small screens */
+    }
+    .stat-content {
+        width: 100%;
+    }
+    .circle-border {
+        width: 150px;
+        height: 150px;
+        border-width: 10px;
+    }
+    .circle-border h1 {
+        font-size: 40px;
+    }
+    .stat-count .count-stat .count {
+        font-size: 50px;
+    }
+
+    /* Footer */
+    .col-2 {
+        padding: 0 20px 30px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+/* ############## RESPONSIVE END HERE ############## */

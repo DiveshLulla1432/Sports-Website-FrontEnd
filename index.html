@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home || UsmanSports</title>
+    <title>Home | UsmanSports | The Future of Sports Fandom</title>
+    <meta name="description" content="UsmanSports: Your source for the latest sports news, match highlights, videos, teams, and tournament statistics.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
@@ -13,314 +16,327 @@
 </head>
 
 <body onload="whenLoad()">
-    <div id="loading"></div>
-    <nav>
-        <a href="/" class="logo"><i class="fa-solid fa-table-tennis-paddle-ball"></i>UsmanSports</a>
+    <div id="loading" aria-label="Loading content..."></div>
+
+    <nav aria-label="Main Navigation">
+        <a href="/" class="logo" aria-label="UsmanSports Home"><i class="fa-solid fa-table-tennis-paddle-ball"></i>UsmanSports</a>
         <div id="menu" class="menu">
-            <ul class="nav_link">
-                <li><a href="https://kashanadnan.github.io/Sports-Website-FrontEnd/">Home</a></li>
-                <li><a href="https://kashanadnan.github.io/Sports-Website-FrontEnd/News">News</a></li>
-                <li><a href="https://kashanadnan.github.io/Sports-Website-FrontEnd/Videos">Videos</a></li>
-                <li><a href="https://kashanadnan.github.io/Sports-Website-FrontEnd/Teams">Teams</a></li>
-                <li><a href="https://kashanadnan.github.io/Sports-Website-FrontEnd/Stats">Stats</a></li>
+            <ul class="nav_link" role="menubar">
+                <li role="none"><a href="https://kashanadnan.github.io/Sports-Website-FrontEnd/" role="menuitem" aria-label="Go to Home page">Home</a></li>
+                <li role="none"><a href="https://kashanadnan.github.io/Sports-Website-FrontEnd/News" role="menuitem" aria-label="Go to News page">News</a></li>
+                <li role="none"><a href="https://kashanadnan.github.io/Sports-Website-FrontEnd/Videos" role="menuitem" aria-label="Go to Videos page">Videos</a></li>
+                <li role="none"><a href="https://kashanadnan.github.io/Sports-Website-FrontEnd/Teams" role="menuitem" aria-label="Go to Teams page">Teams</a></li>
+                <li role="none"><a href="https://kashanadnan.github.io/Sports-Website-FrontEnd/Stats" role="menuitem" aria-label="Go to Stats page">Stats</a></li>
             </ul>
             <div class="search-image">
                 <div class="search-box">
-                    <input type="search" placeholder="Search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" placeholder="Search" aria-label="Search the website content">
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
                 </div>
                 <div class="profileImage" id="profileImage">
                     <div class="button">
-                        <a href="https://kashanadnan.github.io/Sports-Website-FrontEnd/SignUp">SignUp</a>
+                        <a href="https://kashanadnan.github.io/Sports-Website-FrontEnd/SignUp">Sign Up</a>
                         <a href="https://kashanadnan.github.io/Sports-Website-FrontEnd/Login">Login</a>
                     </div>
                 </div>
             </div>
             <div class="BarIcons">
-                <i class="fa-solid fa-bars" onclick="openMenu()"></i>
-                <i class="fa-solid fa-xmark"></i>
+                <i class="fa-solid fa-bars" onclick="openMenu()" aria-label="Open menu"></i>
+                <i class="fa-solid fa-xmark" aria-label="Close menu"></i>
             </div>
+        </div>
     </nav>
+
     <main>
         <div class="main-content">
             <div class="main-heading">
-                <h1>the future of <span> sports</span> fandom</h1>
+                <h1>the future of <span>sports</span> fandom</h1>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam inventore dolorem id! Rerum in,
                     corrupti ab tempora tenetur pariatur provident totam non cum dignissimos fugiat quis minima.</p>
-                <button>explore more ></button>
+                <button aria-label="Explore more sports content">explore more ></button>
             </div>
         </div>
     </main>
+
     <div class="heading">
-        <h1>LATEST <span>NEWS</span></h1>
+        <h2>LATEST <span>NEWS</span></h2>
     </div>
-    <section class="news-section">
-        <div class="main-news-image">
+    <section class="news-section" aria-labelledby="latest-news-heading">
+        <h2 id="latest-news-heading" class="sr-only">Latest News</h2>
+        <article class="main-news-image" aria-label="ICC Player of the Month nominees news">
             <h4 class="main-news-head">icc potm</h4>
-            <h1>icc men's player of the month nominess for november....</h1>
-        </div>
+            <h3>ICC Men's Player of the Month nominees for November....</h3>
+        </article>
         <div class="new-news-here">
             <div class="news-cards">
-                <div class="news-card">
-                    <img src="./images/news-1.webp" class="news-image" alt="">
+                <article class="news-card">
+                    <img src="./images/news-1.webp" class="news-image" alt="A stadium view, related to T20 World Cup">
                     <div class="news-content">
-                        <h3>
-                            New format, new location: How the 2024 T20 World Cup...</h3>
+                        <h3>New format, new location: How the 2024 T20 World Cup...</h3>
                         <div class="comp-date">
                             <h4 class="comp">UsmanSports 2024</h4>
                             <h4 class="news-date">MON 21 NOV</h4>
                         </div>
                     </div>
-                </div>
-                <div class="news-card">
-                    <img src="./images/news-4.webp" class="news-image" alt="">
+                </article>
+                <article class="news-card">
+                    <img src="./images/news-4.webp" class="news-image" alt="Cricket players celebrating, related to T20 World Cup">
                     <div class="news-content">
-                        <h3>
-                            New format, new location: How the 2024 T20 World Cup...</h3>
+                        <h3>New format, new location: How the 2024 T20 World Cup...</h3>
                         <div class="comp-date">
                             <h4 class="comp">UsmanSports 2024</h4>
                             <h4 class="news-date">MON 21 NOV</h4>
                         </div>
                     </div>
-                </div>
-                <div class="news-card">
-                    <img src="./images/news2.webp" class="news-image" alt="">
+                </article>
+                <article class="news-card">
+                    <img src="./images/news2.webp" class="news-image" alt="Two cricket players shaking hands">
                     <div class="news-content">
-                        <h3>
-                            New format, new location: How the 2024 T20 World Cup...</h3>
+                        <h3>New format, new location: How the 2024 T20 World Cup...</h3>
                         <div class="comp-date">
                             <h4 class="comp">UsmanSports 2024</h4>
                             <h4 class="news-date">MON 21 NOV</h4>
                         </div>
                     </div>
-                </div>
-                <div class="news-card">
-                    <img src="./images/news-3.webp" class="news-image" alt="">
+                </article>
+                <article class="news-card">
+                    <img src="./images/news-3.webp" class="news-image" alt="A batsman playing a shot">
                     <div class="news-content">
-                        <h3>
-                            New format, new location: How the 2024 T20 World Cup...</h3>
+                        <h3>New format, new location: How the 2024 T20 World Cup...</h3>
                         <div class="comp-date">
                             <h4 class="comp">UsmanSports 2024</h4>
                             <h4 class="news-date">MON 21 NOV</h4>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
-    <section class="match-highlights">
+
+    <section class="match-highlights" aria-labelledby="highlights-heading">
         <div class="video-highlights">
-            <h1>match highlights</h1>
-            <iframe width="800" height="515" src="https://www.youtube.com/embed/bO0weiw7pT0"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
+            <h2 id="highlights-heading">Match Highlights</h2>
+            
+            <div class="video-placeholder" style="position: relative; width: 100%; height: 500px; background-color: #000;">
+                <img src="./images/video-placeholder-large.webp" alt="Match Highlights Placeholder" 
+                    style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7;">
+                
+                <i class="fa-solid fa-play" 
+                   style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                   color: white; font-size: 80px; cursor: pointer; border: 4px solid white; 
+                   border-radius: 50%; padding: 20px 25px 20px 30px; background-color: rgba(0, 0, 0, 0.4);">
+                </i>
+            </div>
         </div>
+        
         <div class="videos">
-            <div class="video">
-                <img src="./images/video-1.webp">
-                <h1>Thrilling Video the England Wins with 31 ball</h1>
-            </div>
-            <div class="video">
-                <img src="./images/video-1.webp">
-                <h1>Thrilling Video the England Wins with 31 ball</h1>
-            </div>
-            <div class="video">
-                <img src="./images/video-1.webp">
-                <h1>Thrilling Video the England Wins with 31 ball</h1>
-            </div>
-            <div class="video">
-                <img src="./images/video-1.webp">
-                <h1>Thrilling Video the England Wins with 31 ball</h1>
-            </div>
-            <div class="video">
-                <img src="./images/video-1.webp">
-                <h1>Thrilling Video the England Wins with 31 ball</h1>
-            </div>
-            <div class="video">
-                <img src="./images/video-1.webp">
-                <h1>Thrilling Video the England Wins with 31 ball</h1>
-            </div>
-            <div class="video">
-                <img src="./images/video-1.webp">
-                <h1>Thrilling Video the England Wins with 31 ball</h1>
-            </div>
-            <div class="video">
-                <img src="./images/video-1.webp">
-                <h1>Thrilling Video the England Wins with 31 ball</h1>
-            </div>
-            <div class="video">
-                <img src="./images/video-1.webp">
-                <h1>Thrilling Video the England Wins with 31 ball</h1>
-            </div>
-            <div class="video">
-                <img src="./images/video-1.webp">
-                <h1>Thrilling Video the England Wins with 31 ball</h1>
-            </div>
-            <div class="video">
-                <img src="./images/video-1.webp">
-                <h1>Thrilling Video the England Wins with 31 ball</h1>
-            </div>
-            <div class="video">
-                <img src="./images/video-1.webp">
-                <h1>Thrilling Video the England Wins with 31 ball</h1>
-            </div>
+            <article class="video">
+                <img src="./images/video-1.webp" alt="Highlight video thumbnail 1: England Win">
+                <h3>Thrilling Video the England Wins with 31 ball</h3>
+            </article>
+            <article class="video">
+                <img src="./images/video-2.webp" alt="Highlight video thumbnail 2">
+                <h3>Thrilling Video the England Wins with 31 ball</h3>
+            </article>
+            <article class="video">
+                <img src="./images/video-3.webp" alt="Highlight video thumbnail 3">
+                <h3>Thrilling Video the England Wins with 31 ball</h3>
+            </article>
+            <article class="video">
+                <img src="./images/video-4.webp" alt="Highlight video thumbnail 4">
+                <h3>Thrilling Video the England Wins with 31 ball</h3>
+            </article>
+            <article class="video">
+                <img src="./images/video-5.webp" alt="Highlight video thumbnail 5">
+                <h3>Thrilling Video the England Wins with 31 ball</h3>
+            </article>
+            <article class="video">
+                <img src="./images/video-6.webp" alt="Highlight video thumbnail 6">
+                <h3>Thrilling Video the England Wins with 31 ball</h3>
+            </article>
+            <article class="video">
+                <img src="./images/video-7.webp" alt="Highlight video thumbnail 7">
+                <h3>Thrilling Video the England Wins with 31 ball</h3>
+            </article>
+            <article class="video">
+                <img src="./images/video-8.webp" alt="Highlight video thumbnail 8">
+                <h3>Thrilling Video the England Wins with 31 ball</h3>
+            </article>
+            <article class="video">
+                <img src="./images/video-9.webp" alt="Highlight video thumbnail 9">
+                <h3>Thrilling Video the England Wins with 31 ball</h3>
+            </article>
+            <article class="video">
+                <img src="./images/video-10.webp" alt="Highlight video thumbnail 10">
+                <h3>Thrilling Video the England Wins with 31 ball</h3>
+            </article>
+            <article class="video">
+                <img src="./images/video-11.webp" alt="Highlight video thumbnail 11">
+                <h3>Thrilling Video the England Wins with 31 ball</h3>
+            </article>
+            <article class="video">
+                <img src="./images/video-12.webp" alt="Highlight video thumbnail 12">
+                <h3>Thrilling Video the England Wins with 31 ball</h3>
+            </article>
         </div>
     </section>
+    
     <div class="heading">
-        <h1>Latest <span>Videos</span></h1>
+        <h2>Latest <span>Videos</span></h2>
     </div>
-    <section class="videos-section">
+    <section class="videos-section" aria-labelledby="latest-videos-heading">
+        <h2 id="latest-videos-heading" class="sr-only">Latest Videos</h2>
         <div class="videos-cards">
-            <div class="video-card">
-                <img src="./images/video-4.webp" class="video-thumbnail" alt="">
-                <h4 class="duration"><i class="fa-solid fa-play"></i>3:44</h4>
+            <article class="video-card">
+                <img src="./images/video-4.webp" class="video-thumbnail" alt="Thumbnail: Top dismissals from T20 World Cup 2022">
+                <h4 class="duration" aria-label="Video duration 3 minutes 44 seconds"><i class="fa-solid fa-play" aria-hidden="true"></i>3:44</h4>
                 <div class="video-content">
-                    <h1>Top dismissals | ICC Men's T20WC 2022</h1>
+                    <h3>Top dismissals | ICC Men's T20WC 2022</h3>
                     <div class="comp-date videos-date-comp">
                         <h4 class="comp">UsmanSports 2023</h4>
                         <h4 class="date">30 NOV 2022</h4>
                     </div>
                 </div>
-            </div>
-            <div class="video-card">
-                <img src="./images/video-2.webp" class="video-thumbnail" alt="">
-                <h4 class="duration"><i class="fa-solid fa-play"></i>3:44</h4>
+            </article>
+            <article class="video-card">
+                <img src="./images/video-2.webp" class="video-thumbnail" alt="Thumbnail: Top dismissals from T20 World Cup 2022">
+                <h4 class="duration" aria-label="Video duration 3 minutes 44 seconds"><i class="fa-solid fa-play" aria-hidden="true"></i>3:44</h4>
                 <div class="video-content">
-                    <h1>Top dismissals | ICC Men's T20WC 2022</h1>
+                    <h3>Top dismissals | ICC Men's T20WC 2022</h3>
                     <div class="comp-date videos-date-comp">
                         <h4 class="comp">UsmanSports 2023</h4>
                         <h4 class="date">30 NOV 2022</h4>
                     </div>
                 </div>
-            </div>
-            <div class="video-card">
-                <img src="./images/video-3.webp" class="video-thumbnail" alt="">
-                <h4 class="duration"><i class="fa-solid fa-play"></i>3:44</h4>
+            </article>
+            <article class="video-card">
+                <img src="./images/video-3.webp" class="video-thumbnail" alt="Thumbnail: Top dismissals from T20 World Cup 2022">
+                <h4 class="duration" aria-label="Video duration 3 minutes 44 seconds"><i class="fa-solid fa-play" aria-hidden="true"></i>3:44</h4>
                 <div class="video-content">
-                    <h1>Top dismissals | ICC Men's T20WC 2022</h1>
+                    <h3>Top dismissals | ICC Men's T20WC 2022</h3>
                     <div class="comp-date videos-date-comp">
                         <h4 class="comp">UsmanSports 2023</h4>
                         <h4 class="date">30 NOV 2022</h4>
                     </div>
                 </div>
-            </div>
-            <div class="video-card">
-                <img src="./images/video-4.webp" class="video-thumbnail" alt="">
-                <h4 class="duration"><i class="fa-solid fa-play"></i>3:44</h4>
+            </article>
+            <article class="video-card">
+                <img src="./images/video-4.webp" class="video-thumbnail" alt="Thumbnail: Top dismissals from T20 World Cup 2022">
+                <h4 class="duration" aria-label="Video duration 3 minutes 44 seconds"><i class="fa-solid fa-play" aria-hidden="true"></i>3:44</h4>
                 <div class="video-content">
-                    <h1>Top dismissals | ICC Men's T20WC 2022</h1>
+                    <h3>Top dismissals | ICC Men's T20WC 2022</h3>
                     <div class="comp-date videos-date-comp">
                         <h4 class="comp">UsmanSports 2023</h4>
                         <h4 class="date">30 NOV 2022</h4>
                     </div>
                 </div>
-            </div>
-            <div class="video-card">
-                <img src="./images/video-4.webp" class="video-thumbnail" alt="">
-                <h4 class="duration"><i class="fa-solid fa-play"></i>3:44</h4>
+            </article>
+            <article class="video-card">
+                <img src="./images/video-4.webp" class="video-thumbnail" alt="Thumbnail: Top dismissals from T20 World Cup 2022">
+                <h4 class="duration" aria-label="Video duration 3 minutes 44 seconds"><i class="fa-solid fa-play" aria-hidden="true"></i>3:44</h4>
                 <div class="video-content">
-                    <h1>Top dismissals | ICC Men's T20WC 2022</h1>
+                    <h3>Top dismissals | ICC Men's T20WC 2022</h3>
                     <div class="comp-date videos-date-comp">
                         <h4 class="comp">UsmanSports 2023</h4>
                         <h4 class="date">30 NOV 2022</h4>
                     </div>
                 </div>
-            </div>
-            <div class="video-card">
-                <img src="./images/video-4.webp" class="video-thumbnail" alt="">
-                <h4 class="duration"><i class="fa-solid fa-play"></i>3:44</h4>
+            </article>
+            <article class="video-card">
+                <img src="./images/video-4.webp" class="video-thumbnail" alt="Thumbnail: Top dismissals from T20 World Cup 2022">
+                <h4 class="duration" aria-label="Video duration 3 minutes 44 seconds"><i class="fa-solid fa-play" aria-hidden="true"></i>3:44</h4>
                 <div class="video-content">
-                    <h1>Top dismissals | ICC Men's T20WC 2022</h1>
+                    <h3>Top dismissals | ICC Men's T20WC 2022</h3>
                     <div class="comp-date videos-date-comp">
                         <h4 class="comp">UsmanSports 2023</h4>
                         <h4 class="date">30 NOV 2022</h4>
                     </div>
                 </div>
-            </div>
-            <div class="video-card">
-                <img src="./images/video-4.webp" class="video-thumbnail" alt="">
-                <h4 class="duration"><i class="fa-solid fa-play"></i>3:44</h4>
+            </article>
+            <article class="video-card">
+                <img src="./images/video-4.webp" class="video-thumbnail" alt="Thumbnail: Top dismissals from T20 World Cup 2022">
+                <h4 class="duration" aria-label="Video duration 3 minutes 44 seconds"><i class="fa-solid fa-play" aria-hidden="true"></i>3:44</h4>
                 <div class="video-content">
-                    <h1>Top dismissals | ICC Men's T20WC 2022</h1>
+                    <h3>Top dismissals | ICC Men's T20WC 2022</h3>
                     <div class="comp-date videos-date-comp">
                         <h4 class="comp">UsmanSports 2023</h4>
                         <h4 class="date">30 NOV 2022</h4>
                     </div>
                 </div>
-            </div>
-            <div class="video-card">
-                <img src="./images/video-4.webp" class="video-thumbnail" alt="">
-                <h4 class="duration"><i class="fa-solid fa-play"></i>3:44</h4>
+            </article>
+            <article class="video-card">
+                <img src="./images/video-4.webp" class="video-thumbnail" alt="Thumbnail: Top dismissals from T20 World Cup 2022">
+                <h4 class="duration" aria-label="Video duration 3 minutes 44 seconds"><i class="fa-solid fa-play" aria-hidden="true"></i>3:44</h4>
                 <div class="video-content">
-                    <h1>Top dismissals | ICC Men's T20WC 2022</h1>
+                    <h3>Top dismissals | ICC Men's T20WC 2022</h3>
                     <div class="comp-date videos-date-comp">
                         <h4 class="comp">UsmanSports 2023</h4>
                         <h4 class="date">30 NOV 2022</h4>
                     </div>
                 </div>
-            </div>
+            </article>
         </div>
     </section>
-    <section class="tournament-stats">
+
+    <section class="tournament-stats" aria-labelledby="stats-heading">
         <div class="tournament-heading">
             <h3>ICC Men’s Usman World Cup</h3>
-            <h1>Tournament Stats</h1>
+            <h2 id="stats-heading">Tournament Stats</h2>
         </div>
         <div class="stats">
             <div class="stat">
                 <div class="stat-content">
-                    <h3>high score</h3>
+                    <h3>High Score</h3>
                     <h1>
                         <span>RILLE</span>
                         ROSSOUW
                     </h1>
                     <div class="flag">
-                        <img src="../Teams/images/Flag-Afghanistan.webp" alt="">
+                        <img src="../Teams/images/Flag-SouthAfrica.webp" alt="South Africa flag">
                         <h2>SA</h2>
                     </div>
                     <h1 class="count">109</h1>
                 </div>
                 <div class="man">
-                    <img src="./images/sa.png" alt="">
+                    <img src="./images/sa.png" alt="Rilee Rossouw">
                 </div>
             </div>
             <div class="stat">
                 <div class="stat-content">
-                    <h3>most runs</h3>
+                    <h3>Most Runs</h3>
                     <h1>
                         <span>VIRAT</span>
-                        KOLI
+                        KOHLI
                     </h1>
                     <div class="flag">
-                        <img src="../Teams/images/Flag-India.webp" alt="">
+                        <img src="../Teams/images/Flag-India.webp" alt="India flag">
                         <h2>IND</h2>
                     </div>
                     <h1 class="count">296</h1>
                 </div>
                 <div class="man">
-                    <img src="./images/virat.png" alt="">
+                    <img src="./images/virat.png" alt="Virat Kohli">
                 </div>
             </div>
             <div class="stat">
                 <div class="stat-content">
-                    <h3>most wickets</h3>
+                    <h3>Most Wickets</h3>
                     <h1>
                         <span>WANINDU</span>
                         HARANGA
                     </h1>
                     <div class="flag">
-                        <img src="../Teams/images/Flag-Afghanistan.webp" alt="">
-                        <h2>SA</h2>
+                         <img src="../Teams/images/Flag-SriLanka.webp" alt="Sri Lanka flag">
+                        <h2>SL</h2>
                     </div>
                     <h1 class="count">15</h1>
                 </div>
                 <div class="man">
-                    <img src="./images/wanindu.png" alt="">
+                    <img src="./images/wanindu.png" alt="Wanindu Hasaranga">
                 </div>
             </div>
             <div class="stat stat-count">
-                <div class="circle-border">
+                <div class="circle-border" aria-label="45 matches played">
                     <h1>45</h1>
                     <h3>MATCHES PLAYED</h3>
                 </div>
@@ -330,7 +346,7 @@
                     <h3>HIGHEST INNINGS SCORE</h3>
                     <h1 class="count">205/5</h1>
                     <div class="flag">
-                        <img src="../Teams/images/Flag-Afghanistan.webp" alt="">
+                        <img src="../Teams/images/Flag-SouthAfrica.webp" alt="South Africa flag">
                         <h2>SA</h2>
                     </div>
                 </div>
@@ -340,115 +356,100 @@
                     <h3>BEST WIN PERCENTAGE</h3>
                     <h1 class="count">83.3%</h1>
                     <div class="flag">
-                        <img src="../Teams/images/Flag-England.webp" alt="">
+                        <img src="../Teams/images/Flag-England.webp" alt="England flag">
                         <h2>ENG</h2>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <div class="partners">
+
+    <section class="partners" aria-labelledby="partners-heading">
+        <h2 id="partners-heading" class="sr-only">Our Official Partners</h2>
         <div class="partners-1">
-            <img src="./images/aramco.webp" alt="">
-            <img src="./images/Emirates.webp" alt="">
-            <img src="./images/MRF-TYPES.webp" alt="">
-            <img src="./images/Booking.webp" alt="">
-            <img src="./images/byjus.webp" alt="">
+            <img src="./images/aramco.webp" alt="Aramco logo">
+            <img src="./images/Emirates.webp" alt="Emirates logo">
+            <img src="./images/MRF-TYPES.webp" alt="MRF Tyres logo">
+            <img src="./images/Booking.webp" alt="Booking.com logo">
+            <img src="./images/byjus.webp" alt="Byju's logo">
         </div>
         <div class="partners-2">
-            <img src="./images/aramco.webp" alt="">
-            <img src="./images/Emirates.webp" alt="">
-            <img src="./images/MRF-TYPES.webp" alt="">
-            <img src="./images/Booking.webp" alt="">
-            <img src="./images/byjus.webp" alt="">
-            <img src="./images/byjus.webp" alt="">
-            <img src="./images/byjus.webp" alt="">
+            <img src="./images/aramco.webp" alt="Aramco logo">
+            <img src="./images/Emirates.webp" alt="Emirates logo">
+            <img src="./images/MRF-TYPES.webp" alt="MRF Tyres logo">
+            <img src="./images/Booking.webp" alt="Booking.com logo">
+            <img src="./images/byjus.webp" alt="Byju's logo">
+            <img src="./images/byjus.webp" alt="Byju's logo">
+            <img src="./images/byjus.webp" alt="Byju's logo">
         </div>
-    </div>
+    </section>
+
     <footer>
         <div class="col-1">
             <h1>Follow Us On Social</h1>
-            <div class="icons">
-                <i class="fa-brands fa-square-facebook"></i>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-youtube"></i>
+            <div class="icons" aria-label="Social media links">
+                <a href="#" aria-label="Follow us on Facebook"><i class="fa-brands fa-square-facebook" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Follow us on Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Follow us on Twitter"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Subscribe to our YouTube channel"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
             </div>
         </div>
         <div class="col-2">
-            <div class="list">
+            <nav class="list" aria-label="Usman Sports Links">
                 <h2>Usman Sports</h2>
                 <ul>
-                    <li>Homepage</li>
-                    <li>Videos</li>
-                    <li>News</li>
-                    <li>Blogs</li>
-                    <li>Tournament</li>
-                    <li>Stats</li>
-                    <li>Teams</li>
-                    <li>More</li>
+                    <li><a href="#">Homepage</a></li>
+                    <li><a href="#">Videos</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Tournament</a></li>
+                    <li><a href="#">Stats</a></li>
+                    <li><a href="#">Teams</a></li>
+                    <li><a href="#">More</a></li>
                 </ul>
-            </div>
-            <div class="list">
-                <h2>Usman Sports</h2>
+            </nav>
+            <nav class="list" aria-label="Company Links">
+                <h2>Company</h2>
                 <ul>
-                    <li>Homepage</li>
-                    <li>Videos</li>
-                    <li>News</li>
-                    <li>Blogs</li>
-                    <li>Tournament</li>
-                    <li>Stats</li>
-                    <li>Teams</li>
-                    <li>More</li>
-                </ul>
-            </div>
-            <div class="list">
-                <h2>Usman Sports</h2>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    </ul>
+            </nav>
+             <nav class="list" aria-label="Legal Links">
+                <h2>Legal</h2>
                 <ul>
-                    <li>Homepage</li>
-                    <li>Videos</li>
-                    <li>News</li>
-                    <li>Blogs</li>
-                    <li>Tournament</li>
-                    <li>Stats</li>
-                    <li>Teams</li>
-                    <li>More</li>
-                </ul>
-            </div>
-            <div class="list">
-                <h2>Usman Sports</h2>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+            </nav>
+            <nav class="list" aria-label="Support Links">
+                <h2>Support</h2>
                 <ul>
-                    <li>Homepage</li>
-                    <li>Videos</li>
-                    <li>News</li>
-                    <li>Blogs</li>
-                    <li>Tournament</li>
-                    <li>Stats</li>
-                    <li>Teams</li>
-                    <li>More</li>
-                </ul>
-            </div>
-            <div class="list">
-                <h2>Usman Sports</h2>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    </ul>
+            </nav>
+            <nav class="list" aria-label="International Sites">
+                <h2>International</h2>
                 <ul>
-                    <li>Homepage</li>
-                    <li>Videos</li>
-                    <li>News</li>
-                    <li>Blogs</li>
-                    <li>Tournament</li>
-                    <li>Stats</li>
-                    <li>Teams</li>
-                    <li>More</li>
-                </ul>
-            </div>
+                    <li><a href="#">US Site</a></li>
+                    <li><a href="#">UK Site</a></li>
+                    <li><a href="#">India Site</a></li>
+                    </ul>
+            </nav>
         </div>
         <div class="footer-bottom">
-            <p>2023 &copy; All Right Reserved UsmanSports Copyright </p>
+            <p>&copy; 2023 All Right Reserved UsmanSports Copyright</p>
         </div>
     </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./script.js"></script>
+
 </body>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="./script.js"></script>
 
 </html>
